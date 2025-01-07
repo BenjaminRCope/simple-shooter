@@ -1,22 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://dpkb1jp8kuvc4"]
+[gd_scene load_steps=5 format=3 uid="uid://dpkb1jp8kuvc4"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_2khtg"]
-[ext_resource type="PackedScene" uid="uid://bqifipbniipqd" path="res://scenes/enemies/drone.tscn" id="4_p7y5s"]
+[ext_resource type="Texture2D" uid="uid://b4el0qxxdfn7" path="res://graphics/ground/dirt.png" id="2_ijrqw"]
+[ext_resource type="PackedScene" uid="uid://bauvf7hv8itj5" path="res://scenes/placeables/gate.tscn" id="4_f0v4t"]
 [ext_resource type="PackedScene" uid="uid://bkdqk8x5x1psw" path="res://scenes/player/player.tscn" id="4_s0chl"]
-[ext_resource type="PackedScene" uid="uid://c7t0cp2b7tfm5" path="res://scenes/placeables/bed.tscn" id="5_nu0g8"]
-[ext_resource type="PackedScene" uid="uid://cowsro6u5vhei" path="res://scenes/placeables/toilet.tscn" id="5_y1tk5"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_2khtg")
 
-[node name="Drone" parent="." instance=ExtResource("4_p7y5s")]
-position = Vector2(366, 161)
-
-[node name="Bed" parent="." instance=ExtResource("5_nu0g8")]
-position = Vector2(829, 457)
+[node name="Dirt" type="Sprite2D" parent="."]
+position = Vector2(574, 352)
+scale = Vector2(4, 4)
+texture = ExtResource("2_ijrqw")
 
 [node name="Player" parent="." instance=ExtResource("4_s0chl")]
+position = Vector2(583, 535)
 
-[node name="Toilet" parent="." instance=ExtResource("5_y1tk5")]
-position = Vector2(1093, 64)
-scale = Vector2(0.5, 0.5)
+[node name="Gate" parent="." instance=ExtResource("4_f0v4t")]
+position = Vector2(528, -472)
+
+[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
