@@ -1,5 +1,8 @@
 extends CharacterBody2D
 
+signal laser_input_detected(pos)
+signal grenade_input_detected
+
 const speed = 300
 
 var can_laser: bool = true
@@ -11,12 +14,15 @@ func _process(_delta):
 	move_and_slide()
 	
 	if Input.is_action_just_pressed("primary action") and can_laser:
-		print("pew pew")
+		var laser_markers = $LaserStartPosition.get_children()
+		var selected_laser = laser_markers[randi() % laser_markers.size()]
+		
+		laser_input_detected.emit(selected_laser.global_position)
 		can_laser = false
 		$laserTimer.start()
 		
 	if Input.is_action_just_pressed("secondary action") and can_grenade:
-		print("shoot grenade")
+		grenade_input_detected.emit()
 		can_grenade = false
 		$grenadeTimer.start()
 
