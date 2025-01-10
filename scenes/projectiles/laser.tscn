@@ -9,7 +9,7 @@ height = 162.0
 
 [node name="Laser" type="Area2D"]
 script = ExtResource("1_cdkeh")
-speed = 2000
+speed = 500
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j3n2s")

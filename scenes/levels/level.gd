@@ -1,12 +1,7 @@
 extends Node2D
 
 var laser_scene: PackedScene = preload("res://scenes/projectiles/laser.tscn")
-
-func _ready():
-	pass
-	
-func _process(_delta):
-	pass
+var grenade_scene: PackedScene = preload("res://scenes/projectiles/grenade.tscn")
 
 func _on_gate_player_entered_gate(body) -> void:
 	print("body has entered")
@@ -17,5 +12,8 @@ func _on_player_laser_input_detected(pos) -> void:
 	laser.position = pos
 	$Projectiles.add_child(laser)
 
-func _on_player_grenade_input_detected() -> void:
-	print("shoot grenade")
+func _on_player_grenade_input_detected(pos) -> void:
+	var grenade = grenade_scene.instantiate() as RigidBody2D
+	grenade.position = pos
+	grenade.linear_velocity = Vector2.UP * 100
+	$Projectiles.add_child(grenade)
