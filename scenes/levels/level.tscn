@@ -66,7 +66,7 @@ tile_map_data = PackedByteArray("AAD9////AAACAAAAAAD8////AAABAAAAAAD5////AAABAAA
 tile_set = SubResource("TileSet_or3f2")
 
 [node name="House" parent="." instance=ExtResource("8_gsclx")]
-position = Vector2(-1226, 1883)
+position = Vector2(-237, 1655)
 rotation = -2.31256
 scale = Vector2(0.5, 0.5)
 
