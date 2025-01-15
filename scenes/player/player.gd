@@ -19,6 +19,7 @@ func _process(_delta):
 	
 	# handle laser inputs
 	if Input.is_action_just_pressed("primary action") and can_laser:
+		$FiringLaserEffect.emitting = true
 		var laser_markers = $LaserStartPosition.get_children()
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		var player_direction = (get_global_mouse_position() - position).normalized()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dpkb1jp8kuvc4"]
+[gd_scene load_steps=13 format=4 uid="uid://dpkb1jp8kuvc4"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_2khtg"]
 [ext_resource type="Texture2D" uid="uid://cuk3350ap0a5y" path="res://graphics/ground/stones.png" id="2_t6l4v"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://birm7lyjps0dr" path="res://graphics/tilesets/outside_walls.png" id="4_t5g6d"]
 [ext_resource type="Texture2D" uid="uid://daj4we33cucqo" path="res://graphics/tilesets/soil.png" id="5_jrysk"]
 [ext_resource type="PackedScene" uid="uid://tom35608jswm" path="res://scenes/houses/house.tscn" id="8_gsclx"]
+[ext_resource type="PackedScene" uid="uid://bqop0tqxf4ya" path="res://scenes/placeables/steam_vent.tscn" id="9_5a14g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfrld"]
 resource_name = "Walls"
@@ -64,6 +65,9 @@ texture = ExtResource("3_jpc4c")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD9////AAACAAAAAAD8////AAABAAAAAAD5////AAABAAAAAAAFAP//AAAAAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAACAAEAAAAKAAAAAAAAAAIAAAAKAAEAAAAAAAIAAAAAAAMAAQABAAEAAAAAAAIAAQABAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAEAAAABAAIAAQACAAAAAAABAAMAAQACAAEAAAABAAQAAQACAAIAAAAAAAQAAQABAAIAAAD//wQAAQAAAAIAAAD7////AAABAAAAAAD6////AAABAAAAAAA=")
 tile_set = SubResource("TileSet_or3f2")
+
+[node name="SteamVent" parent="Ground" instance=ExtResource("9_5a14g")]
+position = Vector2(114, 466)
 
 [node name="House" parent="." instance=ExtResource("8_gsclx")]
 position = Vector2(-237, 1655)

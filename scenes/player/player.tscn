@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkdqk8x5x1psw"]
+[gd_scene load_steps=6 format=3 uid="uid://bkdqk8x5x1psw"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_76fg1"]
 [ext_resource type="Texture2D" uid="uid://c52mkkv6muna1" path="res://graphics/player/player.png" id="1_brl4y"]
+[ext_resource type="Texture2D" uid="uid://3v713qvvgw8u" path="res://graphics/decals/white.png" id="3_43lla"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nlxgt"]
 radius = 57.0
 height = 136.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i78qn"]
+particle_flag_disable_z = true
+spread = 43.286
+initial_velocity_min = 700.0
+initial_velocity_max = 1000.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.75
+color = Color(0, 0.756863, 0.756863, 0.486275)
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 31
@@ -38,6 +49,14 @@ position = Vector2(126, 19)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPosition"]
 position = Vector2(126, 28)
+
+[node name="FiringLaserEffect" type="GPUParticles2D" parent="."]
+position = Vector2(126, 20)
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_i78qn")
+texture = ExtResource("3_43lla")
+lifetime = 0.1
+one_shot = true
 
 [connection signal="timeout" from="laserTimer" to="." method="_on_laser_timer_timeout"]
 [connection signal="timeout" from="grenadeTimer" to="." method="_on_grenade_timer_timeout"]
