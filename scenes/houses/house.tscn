@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://tom35608jswm"]
+[gd_scene load_steps=7 format=4 uid="uid://tom35608jswm"]
 
 [ext_resource type="Texture2D" uid="uid://ccknhwpjra5mn" path="res://graphics/tilesets/interior.png" id="1_mrp6a"]
+[ext_resource type="PackedScene" uid="uid://csb6ley642ucf" path="res://scenes/placeables/simple_light.tscn" id="2_sbddm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4gc"]
 size = Vector2(3636, 2428)
@@ -81,9 +82,13 @@ texture_region_size = Vector2i(390, 390)
 
 [sub_resource type="TileSet" id="TileSet_hreof"]
 tile_size = Vector2i(390, 390)
+occlusion_layer_0/light_mask = 1
 physics_layer_0/collision_layer = 4
 physics_layer_0/collision_mask = 11
 sources/0 = SubResource("TileSetAtlasSource_nl5sd")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_wmsxm"]
+polygon = PackedVector2Array(1377, 586, 1380, -208, 213, -214, 210, -563, 178, -568, 176, -214, -603, -210, -600, 595, -589, 600, 176, 600)
 
 [node name="House" type="Area2D"]
 collision_layer = 16
@@ -110,3 +115,24 @@ tile_set = SubResource("TileSet_hreof")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAACAAMAAAAFAAgAAAACAAIAAAABAAYAAAACAAEAAAACAAcAAAADAAEAAAABAAgAAAADAAAAAAABAAYAAAADAP//AAABAAcAAAACAP//AAAAAAYAAAABAP//AAAAAAYAAAAAAP//AAADAAgAAAD/////AAAAAAYAAAD+////AAAAAAcAAAD+/wAAAAABAAYAAAD+/wEAAAAAAAgAAAD//wEAAAAAAAYAAAAAAAEAAAAGAAcAAAABAAEAAAAEAAcAAAAAAP7/AAAFAAYAAAA=")
 tile_set = SubResource("TileSet_hreof")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="TileMap/innerWalls"]
+occluder = SubResource("OccluderPolygon2D_wmsxm")
+
+[node name="SimpleLight" parent="." instance=ExtResource("2_sbddm")]
+position = Vector2(2092, 246)
+rotation = 1.5708
+scale = Vector2(2, 2)
+
+[node name="SimpleLight2" parent="." instance=ExtResource("2_sbddm")]
+position = Vector2(938, 1423)
+scale = Vector2(2, 2)
+
+[node name="SimpleLight3" parent="." instance=ExtResource("2_sbddm")]
+position = Vector2(378, -914)
+scale = Vector2(2, 2)
+
+[node name="SimpleLight4" parent="." instance=ExtResource("2_sbddm")]
+position = Vector2(-1308, 223)
+rotation = 4.71239
+scale = Vector2(2, 2)
