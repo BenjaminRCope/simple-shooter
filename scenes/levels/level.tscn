@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=4 uid="uid://dpkb1jp8kuvc4"]
+[gd_scene load_steps=13 format=4 uid="uid://dpkb1jp8kuvc4"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_2khtg"]
-[ext_resource type="PackedScene" uid="uid://b5vi6vaq1y62b" path="res://scenes/placeables/light_fan_animation.tscn" id="2_p7m02"]
 [ext_resource type="Texture2D" uid="uid://cuk3350ap0a5y" path="res://graphics/ground/stones.png" id="2_t6l4v"]
 [ext_resource type="Texture2D" uid="uid://beidhyps87q6s" path="res://graphics/decals/dirt_patch.png" id="3_jpc4c"]
 [ext_resource type="PackedScene" uid="uid://bauvf7hv8itj5" path="res://scenes/placeables/gate.tscn" id="4_f0v4t"]
@@ -57,10 +56,9 @@ position = Vector2(686, 852)
 texture = ExtResource("2_t6l4v")
 region_enabled = true
 region_rect = Rect2(-2346.99, -1061.87, 6876.91, 3348.91)
-metadata/_edit_lock_ = true
 
 [node name="Decoration" type="Sprite2D" parent="Ground"]
-position = Vector2(2632, 1219)
+position = Vector2(1619, 1152)
 texture = ExtResource("3_jpc4c")
 
 [node name="WallTileLayer" type="TileMapLayer" parent="Ground"]
@@ -68,18 +66,13 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAD9////AAACAAAAAAD8////AAABAAAAAAD5////AAABAAAAAAAFAP//AAAAAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAACAAEAAAAKAAAAAAAAAAIAAAAKAAEAAAAAAAIAAAAAAAMAAQABAAEAAAAAAAIAAQABAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAEAAAABAAIAAQACAAAAAAABAAMAAQACAAEAAAABAAQAAQACAAIAAAAAAAQAAQABAAIAAAD//wQAAQAAAAIAAAD7////AAABAAAAAAD6////AAABAAAAAAA=")
 tile_set = SubResource("TileSet_or3f2")
 
-[node name="House" parent="Ground" instance=ExtResource("8_gsclx")]
+[node name="SteamVent" parent="Ground" instance=ExtResource("9_5a14g")]
+position = Vector2(114, 466)
+
+[node name="House" parent="." instance=ExtResource("8_gsclx")]
 position = Vector2(-237, 1655)
 rotation = -2.31256
 scale = Vector2(0.5, 0.5)
-
-[node name="LightFanAnimation" parent="Ground" instance=ExtResource("2_p7m02")]
-position = Vector2(-1001, 1208)
-scale = Vector2(0.5, 0.5)
-autoplay = "default"
-
-[node name="SteamVent" parent="Ground" instance=ExtResource("9_5a14g")]
-position = Vector2(114, 466)
 
 [node name="Player" parent="." instance=ExtResource("4_s0chl")]
 position = Vector2(583, 535)
@@ -90,10 +83,8 @@ position_smoothing_enabled = true
 
 [node name="Gate" parent="." instance=ExtResource("4_f0v4t")]
 position = Vector2(528, -472)
-metadata/_edit_lock_ = true
 
 [node name="Projectiles" type="Node2D" parent="."]
-position = Vector2(1592, 416)
 
 [connection signal="grenade_input_detected" from="Player" to="." method="_on_player_grenade_input_detected"]
 [connection signal="laser_input_detected" from="Player" to="." method="_on_player_laser_input_detected"]
