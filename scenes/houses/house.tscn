@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://tom35608jswm"]
+[gd_scene load_steps=8 format=4 uid="uid://tom35608jswm"]
 
 [ext_resource type="Texture2D" uid="uid://ccknhwpjra5mn" path="res://graphics/tilesets/interior.png" id="1_mrp6a"]
 [ext_resource type="PackedScene" uid="uid://csb6ley642ucf" path="res://scenes/placeables/simple_light.tscn" id="2_sbddm"]
+[ext_resource type="PackedScene" uid="uid://dir6ctthxa7iy" path="res://scenes/placeables/light_fan_animation.tscn" id="3_ptmev"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cs4gc"]
 size = Vector2(3636, 2428)
@@ -136,3 +137,15 @@ scale = Vector2(2, 2)
 position = Vector2(-1308, 223)
 rotation = 4.71239
 scale = Vector2(2, 2)
+
+[node name="LightFanAnimation" parent="." instance=ExtResource("3_ptmev")]
+position = Vector2(1674, -517)
+
+[node name="LightFanAnimation2" parent="." instance=ExtResource("3_ptmev")]
+position = Vector2(-843, -530)
+
+[node name="LightFanAnimation3" parent="." instance=ExtResource("3_ptmev")]
+position = Vector2(-864, 936)
+
+[node name="LightFanAnimation4" parent="." instance=ExtResource("3_ptmev")]
+position = Vector2(1636, 961)
