@@ -86,6 +86,9 @@ position = Vector2(528, -472)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
+[connection signal="body_entered" from="House" to="." method="_on_house_body_entered"]
+[connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
+[connection signal="player_exited" from="House" to="." method="_on_house_player_exited"]
 [connection signal="grenade_input_detected" from="Player" to="." method="_on_player_grenade_input_detected"]
 [connection signal="laser_input_detected" from="Player" to="." method="_on_player_laser_input_detected"]
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
