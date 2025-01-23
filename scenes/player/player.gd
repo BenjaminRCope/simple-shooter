@@ -3,7 +3,8 @@ extends CharacterBody2D
 signal laser_input_detected(pos, direction)
 signal grenade_input_detected(pos, direction)
 
-const speed = 500
+@export var max_speed: int = 500
+var speed: int = max_speed
 
 var can_laser: bool = true
 var can_grenade: bool = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dpkb1jp8kuvc4"]
+[gd_scene load_steps=14 format=4 uid="uid://dpkb1jp8kuvc4"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_2khtg"]
 [ext_resource type="Texture2D" uid="uid://cuk3350ap0a5y" path="res://graphics/ground/stones.png" id="2_t6l4v"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://daj4we33cucqo" path="res://graphics/tilesets/soil.png" id="5_jrysk"]
 [ext_resource type="PackedScene" uid="uid://tom35608jswm" path="res://scenes/houses/house.tscn" id="8_gsclx"]
 [ext_resource type="PackedScene" uid="uid://bqop0tqxf4ya" path="res://scenes/placeables/steam_vent.tscn" id="9_5a14g"]
+[ext_resource type="PackedScene" uid="uid://bqifipbniipqd" path="res://scenes/enemies/drone.tscn" id="10_04x1j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfrld"]
 resource_name = "Walls"
@@ -83,6 +84,9 @@ position_smoothing_enabled = true
 
 [node name="Gate" parent="." instance=ExtResource("4_f0v4t")]
 position = Vector2(528, -472)
+
+[node name="Drone" parent="." instance=ExtResource("10_04x1j")]
+position = Vector2(1456, 567)
 
 [node name="Projectiles" type="Node2D" parent="."]
 
