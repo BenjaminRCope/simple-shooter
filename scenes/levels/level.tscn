@@ -1,79 +1,14 @@
-[gd_scene load_steps=14 format=4 uid="uid://dpkb1jp8kuvc4"]
+[gd_scene load_steps=3 format=3 uid="uid://dpkb1jp8kuvc4"]
 
 [ext_resource type="Script" path="res://scenes/levels/level.gd" id="1_2khtg"]
-[ext_resource type="Texture2D" uid="uid://cuk3350ap0a5y" path="res://graphics/ground/stones.png" id="2_t6l4v"]
-[ext_resource type="Texture2D" uid="uid://beidhyps87q6s" path="res://graphics/decals/dirt_patch.png" id="3_jpc4c"]
-[ext_resource type="PackedScene" uid="uid://bauvf7hv8itj5" path="res://scenes/placeables/gate.tscn" id="4_f0v4t"]
 [ext_resource type="PackedScene" uid="uid://bkdqk8x5x1psw" path="res://scenes/player/player.tscn" id="4_s0chl"]
-[ext_resource type="Texture2D" uid="uid://birm7lyjps0dr" path="res://graphics/tilesets/outside_walls.png" id="4_t5g6d"]
-[ext_resource type="Texture2D" uid="uid://daj4we33cucqo" path="res://graphics/tilesets/soil.png" id="5_jrysk"]
-[ext_resource type="PackedScene" uid="uid://tom35608jswm" path="res://scenes/houses/house.tscn" id="8_gsclx"]
-[ext_resource type="PackedScene" uid="uid://bqop0tqxf4ya" path="res://scenes/placeables/steam_vent.tscn" id="9_5a14g"]
-[ext_resource type="PackedScene" uid="uid://bqifipbniipqd" path="res://scenes/enemies/drone.tscn" id="10_04x1j"]
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfrld"]
-resource_name = "Walls"
-texture = ExtResource("4_t5g6d")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-0:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3feem"]
-resource_name = "Soil"
-texture = ExtResource("5_jrysk")
-texture_region_size = Vector2i(390, 390)
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-0:2/0 = 0
-1:2/0 = 0
-2:2/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_or3f2"]
-tile_size = Vector2i(390, 390)
-physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_mfrld")
-sources/1 = SubResource("TileSetAtlasSource_3feem")
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_2khtg")
 
 [node name="Ground" type="Node2D" parent="."]
 
-[node name="Stones" type="Sprite2D" parent="Ground"]
-texture_repeat = 2
-position = Vector2(686, 852)
-texture = ExtResource("2_t6l4v")
-region_enabled = true
-region_rect = Rect2(-2346.99, -1061.87, 6876.91, 3348.91)
-
-[node name="Decoration" type="Sprite2D" parent="Ground"]
-position = Vector2(1619, 1152)
-texture = ExtResource("3_jpc4c")
-
-[node name="WallTileLayer" type="TileMapLayer" parent="Ground"]
-use_parent_material = true
-tile_map_data = PackedByteArray("AAD9////AAACAAAAAAD8////AAABAAAAAAD5////AAABAAAAAAAFAP//AAAAAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAABAAAAAAAJAP//AAABAAAAAAAKAP//AAACAAEAAAAKAAAAAAAAAAIAAAAKAAEAAAAAAAIAAAAAAAMAAQABAAEAAAAAAAIAAQABAAAAAAD//wIAAQAAAAAAAAD//wMAAQAAAAEAAAABAAIAAQACAAAAAAABAAMAAQACAAEAAAABAAQAAQACAAIAAAAAAAQAAQABAAIAAAD//wQAAQAAAAIAAAD7////AAABAAAAAAD6////AAABAAAAAAA=")
-tile_set = SubResource("TileSet_or3f2")
-
-[node name="SteamVent" parent="Ground" instance=ExtResource("9_5a14g")]
-position = Vector2(114, 466)
-
-[node name="House" parent="." instance=ExtResource("8_gsclx")]
-position = Vector2(-237, 1655)
-rotation = -2.31256
-scale = Vector2(0.5, 0.5)
+[node name="Projectiles" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_s0chl")]
 position = Vector2(583, 535)
@@ -82,17 +17,5 @@ position = Vector2(583, 535)
 zoom = Vector2(0.6, 0.6)
 position_smoothing_enabled = true
 
-[node name="Gate" parent="." instance=ExtResource("4_f0v4t")]
-position = Vector2(528, -472)
-
-[node name="Drone" parent="." instance=ExtResource("10_04x1j")]
-position = Vector2(1456, 567)
-
-[node name="Projectiles" type="Node2D" parent="."]
-
-[connection signal="body_entered" from="House" to="." method="_on_house_body_entered"]
-[connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
-[connection signal="player_exited" from="House" to="." method="_on_house_player_exited"]
 [connection signal="grenade_input_detected" from="Player" to="." method="_on_player_grenade_input_detected"]
 [connection signal="laser_input_detected" from="Player" to="." method="_on_player_laser_input_detected"]
-[connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]

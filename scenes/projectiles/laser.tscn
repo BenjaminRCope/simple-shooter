@@ -19,7 +19,7 @@ texture = ExtResource("1_j3n2s")
 shape = SubResource("CapsuleShape2D_bq3na")
 
 [node name="LaserTTL" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.5
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="LaserTTL" to="." method="_on_laser_ttl_timeout"]
