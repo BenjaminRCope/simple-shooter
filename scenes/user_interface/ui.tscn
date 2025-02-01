@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://tpt2xi5gno73"]
+
+[ext_resource type="Texture2D" uid="uid://faebf752ox23" path="res://graphics/ui/bullet.png" id="1_fpp71"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="LaserCounter" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 40.0
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LaserCounter"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 19.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+text = "20"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="LaserCounter/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_fpp71")
+expand_mode = 4
