@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://tpt2xi5gno73"]
+[gd_scene load_steps=10 format=3 uid="uid://tpt2xi5gno73"]
 
 [ext_resource type="Texture2D" uid="uid://faebf752ox23" path="res://graphics/ui/bullet.png" id="1_fpp71"]
 [ext_resource type="FontFile" uid="uid://c2caytwvcf2pd" path="res://graphics/ui/subatomic.tsoonami.ttf" id="1_v2u3m"]
+[ext_resource type="Script" path="res://scenes/user_interface/ui.gd" id="1_w7dv6"]
 [ext_resource type="Texture2D" uid="uid://b07nbg8y4l45a" path="res://graphics/ui/grenade.png" id="2_grahy"]
 [ext_resource type="Texture2D" uid="uid://d27yn57qxgob2" path="res://graphics/ui/progress_bar/bg.png" id="4_1yyuo"]
 [ext_resource type="Texture2D" uid="uid://5dytspp1idis" path="res://graphics/ui/progress_bar/over.png" id="5_46u0k"]
@@ -14,6 +15,7 @@ default_font = ExtResource("1_v2u3m")
 default_font = ExtResource("1_v2u3m")
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_w7dv6")
 
 [node name="LaserCounter" type="Control" parent="."]
 layout_mode = 3
