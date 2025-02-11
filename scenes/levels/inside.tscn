@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://j307hw3m2fi1"]
+[gd_scene load_steps=12 format=3 uid="uid://j307hw3m2fi1"]
 
 [ext_resource type="PackedScene" uid="uid://dpkb1jp8kuvc4" path="res://scenes/levels/level.tscn" id="1_fmrn0"]
 [ext_resource type="TileSet" uid="uid://sc4egae13tg7" path="res://scenes/levels/house.tres" id="2_4xapy"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dir6ctthxa7iy" path="res://scenes/placeables/light_fan_animation.tscn" id="4_g2mxh"]
 [ext_resource type="PackedScene" uid="uid://csb6ley642ucf" path="res://scenes/placeables/simple_light.tscn" id="4_l50fl"]
 [ext_resource type="Texture2D" uid="uid://jnscdliwyupv" path="res://graphics/lights/overlays/infrastructure.png" id="5_qnrt2"]
+[ext_resource type="PackedScene" uid="uid://rdgejimgqq5i" path="res://scenes/placeables/item.tscn" id="6_s8xwf"]
 [ext_resource type="Texture2D" uid="uid://crgin3niegbjq" path="res://graphics/lights/overlays/hole.png" id="6_yffi2"]
 [ext_resource type="Texture2D" uid="uid://c55lwocwhufhi" path="res://graphics/lights/overlays/lattice.png" id="7_r4qcb"]
 
@@ -44,7 +45,10 @@ rotation = 3.14159
 [node name="Projectiles" parent="." index="1"]
 metadata/_edit_lock_ = true
 
-[node name="Player" parent="." index="2"]
+[node name="Item" parent="." index="2" instance=ExtResource("6_s8xwf")]
+position = Vector2(6692, 1646)
+
+[node name="Player" parent="." index="3"]
 position = Vector2(7216, 1560)
 metadata/_edit_group_ = true
 
@@ -52,7 +56,7 @@ metadata/_edit_group_ = true
 zoom = Vector2(0.4, 0.4)
 metadata/_edit_lock_ = true
 
-[node name="Lights" parent="." index="3"]
+[node name="Lights" parent="." index="4"]
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_g2mxh")]
@@ -84,6 +88,7 @@ modulate = Color(1, 1, 1, 0.027451)
 position = Vector2(5344, 1023)
 scale = Vector2(7.03347, 6.83408)
 texture = ExtResource("6_yffi2")
+metadata/_edit_lock_ = true
 
 [node name="Lattice" type="Sprite2D" parent="Lights" index="8"]
 modulate = Color(1, 1, 1, 0.0509804)
@@ -91,12 +96,13 @@ position = Vector2(1333, -216)
 scale = Vector2(4.51661, 6.1319)
 texture = ExtResource("7_r4qcb")
 
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="4"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
 color = Color(0.501407, 0.501406, 0.501406, 1)
 energy = 0.93
 blend_mode = 1
 
-[node name="SceneTransition" type="Area2D" parent="." index="5"]
+[node name="SceneTransition" type="Area2D" parent="." index="6"]
+position = Vector2(1055, 388)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransition" index="0"]
 position = Vector2(7607.5, 1567)

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 signal laser_input_detected(pos, direction)
 signal grenade_input_detected(pos, direction)
+signal update_stats()
 
 @export var max_speed: int = 500
 var speed: int = max_speed
@@ -46,3 +47,13 @@ func _on_laser_timer_timeout() -> void:
 
 func _on_grenade_timer_timeout() -> void:
 	can_grenade = true
+
+func add_item(type: String):
+	if (type == 'laser'):
+		Globals.laser_amount += 5
+	elif (type == 'grenade'):
+		Globals.grenade_amount += 2
+	elif (type == 'health'):
+		pass
+		
+	update_stats.emit()
