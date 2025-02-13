@@ -48,7 +48,7 @@ metadata/_edit_lock_ = true
 [node name="Item" parent="." index="2" instance=ExtResource("6_s8xwf")]
 position = Vector2(6692, 1646)
 
-[node name="Player" parent="." index="3"]
+[node name="Player" parent="." index="4"]
 position = Vector2(7216, 1560)
 metadata/_edit_group_ = true
 
@@ -56,7 +56,19 @@ metadata/_edit_group_ = true
 zoom = Vector2(0.4, 0.4)
 metadata/_edit_lock_ = true
 
-[node name="Lights" parent="." index="4"]
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
+color = Color(0.501407, 0.501406, 0.501406, 1)
+energy = 0.93
+blend_mode = 1
+
+[node name="SceneTransition" type="Area2D" parent="." index="6"]
+position = Vector2(1055, 388)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransition" index="0"]
+position = Vector2(6552, 1176)
+shape = SubResource("RectangleShape2D_d4iop")
+
+[node name="Lights" parent="." index="7"]
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_g2mxh")]
@@ -95,17 +107,5 @@ modulate = Color(1, 1, 1, 0.0509804)
 position = Vector2(1333, -216)
 scale = Vector2(4.51661, 6.1319)
 texture = ExtResource("7_r4qcb")
-
-[node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
-color = Color(0.501407, 0.501406, 0.501406, 1)
-energy = 0.93
-blend_mode = 1
-
-[node name="SceneTransition" type="Area2D" parent="." index="6"]
-position = Vector2(1055, 388)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneTransition" index="0"]
-position = Vector2(7607.5, 1567)
-shape = SubResource("RectangleShape2D_d4iop")
 
 [connection signal="body_entered" from="SceneTransition" to="." method="_on_scene_transition_body_entered"]

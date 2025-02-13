@@ -20,8 +20,7 @@ func _on_body_entered(_body: Node2D) -> void:
 		Globals.laser_amount += 5
 	elif (type == 'grenade'):
 		Globals.grenade_amount += 2
-	
-	if (type == 'health'):
+	elif (type == 'health'):
 		Globals.health += 10
 
 	queue_free()

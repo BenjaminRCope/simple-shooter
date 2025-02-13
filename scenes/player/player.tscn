@@ -6,7 +6,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nlxgt"]
 radius = 57.0
-height = 136.0
+height = 128.0
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i78qn"]
 particle_flag_disable_z = true

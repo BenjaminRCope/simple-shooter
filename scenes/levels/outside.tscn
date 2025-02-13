@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://qn28r1gdyoc2"]
+[gd_scene load_steps=14 format=4 uid="uid://qn28r1gdyoc2"]
 
 [ext_resource type="PackedScene" uid="uid://dpkb1jp8kuvc4" path="res://scenes/levels/level.tscn" id="1_nni24"]
 [ext_resource type="Texture2D" uid="uid://cuk3350ap0a5y" path="res://graphics/ground/stones.png" id="2_8cla5"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://daj4we33cucqo" path="res://graphics/tilesets/soil.png" id="5_b1ghq"]
 [ext_resource type="PackedScene" uid="uid://bqop0tqxf4ya" path="res://scenes/placeables/steam_vent.tscn" id="6_pyd5i"]
 [ext_resource type="PackedScene" uid="uid://tom35608jswm" path="res://scenes/houses/house.tscn" id="8_pnc6k"]
+[ext_resource type="PackedScene" uid="uid://dw3klt6bf08nw" path="res://scenes/enemies/scout.tscn" id="10_ikurl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pubij"]
 resource_name = "Walls"
@@ -74,6 +75,9 @@ position = Vector2(525, -619)
 position = Vector2(-237, 1655)
 rotation = -2.31256
 scale = Vector2(0.5, 0.5)
+
+[node name="Scout" parent="Enemies" index="0" instance=ExtResource("10_ikurl")]
+position = Vector2(1324, 962)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="player_entered" from="House" to="." method="_on_house_player_entered"]
