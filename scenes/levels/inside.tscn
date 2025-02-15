@@ -48,14 +48,6 @@ metadata/_edit_lock_ = true
 [node name="Item" parent="." index="2" instance=ExtResource("6_s8xwf")]
 position = Vector2(6692, 1646)
 
-[node name="Player" parent="." index="4"]
-position = Vector2(7216, 1560)
-metadata/_edit_group_ = true
-
-[node name="Camera2D" parent="Player" index="7"]
-zoom = Vector2(0.4, 0.4)
-metadata/_edit_lock_ = true
-
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." index="5"]
 color = Color(0.501407, 0.501406, 0.501406, 1)
 energy = 0.93
@@ -68,7 +60,15 @@ position = Vector2(1055, 388)
 position = Vector2(6552, 1176)
 shape = SubResource("RectangleShape2D_d4iop")
 
-[node name="Lights" parent="." index="7"]
+[node name="Player" parent="." index="7"]
+position = Vector2(7216, 1560)
+metadata/_edit_group_ = true
+
+[node name="Camera2D" parent="Player" index="7"]
+zoom = Vector2(0.4, 0.4)
+metadata/_edit_lock_ = true
+
+[node name="Lights" parent="." index="8"]
 metadata/_edit_lock_ = true
 
 [node name="LightFanAnimation" parent="Lights" index="0" instance=ExtResource("4_g2mxh")]

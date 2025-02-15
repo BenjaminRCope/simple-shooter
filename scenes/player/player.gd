@@ -27,9 +27,6 @@ func _process(_delta):
 		var selected_laser = laser_markers[randi() % laser_markers.size()]
 		var player_direction = (get_global_mouse_position() - position).normalized()
 		
-		print(selected_laser.global_position)
-		print(global_position)
-		
 		laser_input_detected.emit(selected_laser.global_position, player_direction)
 		can_laser = false
 		$laserTimer.start()
