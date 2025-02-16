@@ -9,6 +9,9 @@ var speed: int = max_speed
 var can_laser: bool = true
 var can_grenade: bool = true
 
+func hit():
+	print('p hit')
+
 func _process(_delta):
 	# handle directional inputs
 	var direction = Input.get_vector("left", "right", "up", "down")

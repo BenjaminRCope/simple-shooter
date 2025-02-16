@@ -21,7 +21,7 @@ color = Color(0, 0.756863, 0.756863, 0.486275)
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6vmdj"]
 polygon = PackedVector2Array(-179, -60, -144, -76, -108, -81, -97, -66, -85, -50, -58, -32, -21, -20, -9, -17, 2, 0, -5, 16, -29, 20, -38, 32, -72, 33, -75, 21, -137, 41, -167, 36, -170, 24, -176, 14, -185, 0, -194, -20, -192, -42)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Entity"]]
 collision_mask = 31
 script = ExtResource("1_76fg1")
 
@@ -45,13 +45,13 @@ one_shot = true
 [node name="LaserStartPosition" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserStartPosition"]
-position = Vector2(125, 12)
+position = Vector2(193, 12)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserStartPosition"]
-position = Vector2(126, 19)
+position = Vector2(194, 19)
 
 [node name="Marker2D3" type="Marker2D" parent="LaserStartPosition"]
-position = Vector2(126, 28)
+position = Vector2(194, 28)
 
 [node name="FiringLaserEffect" type="GPUParticles2D" parent="."]
 position = Vector2(126, 20)

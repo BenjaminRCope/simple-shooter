@@ -6,6 +6,9 @@ var use_right_gun: bool = false
 
 signal laser(pos, direction)
 
+func hit():
+	print('scout hit')
+
 func _process(_delta):
 	if (scout_activated):
 		look_at(Globals.player_pos)

@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://bm7udskqq5dg5" path="res://graphics/enemies/scout.png" id="1_tbhx5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_25qvo"]
-radius = 36.0
+radius = 53.0094
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_43mk3"]
 radius = 619.427
 
-[node name="Scout" type="CharacterBody2D" groups=["Scouts"]]
+[node name="Scout" type="CharacterBody2D" groups=["Entity", "Scouts"]]
 collision_layer = 2
 collision_mask = 15
 script = ExtResource("1_05bom")
@@ -32,10 +32,10 @@ metadata/_edit_lock_ = true
 [node name="LaserSpawnPosition" type="Node2D" parent="."]
 
 [node name="Marker2D" type="Marker2D" parent="LaserSpawnPosition"]
-position = Vector2(121, -24)
+position = Vector2(144, -23)
 
 [node name="Marker2D2" type="Marker2D" parent="LaserSpawnPosition"]
-position = Vector2(131, 14)
+position = Vector2(154, 15)
 
 [node name="LaserCooldown" type="Timer" parent="."]
 
