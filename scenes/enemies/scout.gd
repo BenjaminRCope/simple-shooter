@@ -2,12 +2,18 @@ extends CharacterBody2D
 
 var scout_activated: bool = false
 var can_laser: bool = true
-var use_right_gun: bool = false
+var use_right_gun: bool = true
+
+var health: int = 30
 
 signal laser(pos, direction)
 
 func hit():
-	print('scout hit')
+	scout_activated = true
+	
+	health -= 10
+	if health <= 0:
+		queue_free()
 
 func _process(_delta):
 	if (scout_activated):
