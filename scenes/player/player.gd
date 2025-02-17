@@ -10,7 +10,7 @@ var can_laser: bool = true
 var can_grenade: bool = true
 
 func hit():
-	print('p hit')
+	Globals.health -= 10
 
 func _process(_delta):
 	# handle directional inputs

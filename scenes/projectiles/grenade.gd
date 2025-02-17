@@ -5,7 +5,7 @@ var explosion_is_active: bool = false
 var explosion_radius: int = 300
 
 func hit():
-	print('hit')
+	explode()
 
 func explode():
 	explosion_is_active = true
